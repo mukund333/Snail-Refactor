@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class IntData : MonoBehaviour
 {
-	[SerializeField] private int data;
 	
+	[SerializeField] private string Label;
+	[SerializeField] private int 	data;
 	public int GetData(){return data;}
 	
 	public void SetData(int newData){

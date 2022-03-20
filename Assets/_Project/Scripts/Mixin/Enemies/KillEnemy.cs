@@ -5,6 +5,7 @@ using UnityEngine;
 public class KillEnemy : MixinActionable
 {
 	[SerializeField] private IntData currentHealth;
+	[Range(0, 10)]
 	[SerializeField] private int BaseHealth; 
 	
 	// bool isKilling;
@@ -19,7 +20,7 @@ public class KillEnemy : MixinActionable
 	{
 		
 		actionableMixin[0].Action();
-		currentHealth.incrementData(BaseHealth);
+		currentHealth.SetData(BaseHealth);
 		gameObject.SetActive(false);
 	}
 }

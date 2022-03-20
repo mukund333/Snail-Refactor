@@ -7,7 +7,7 @@ public class CheckCoolDown : MixinBase
 	[SerializeField] private float cooldownTimer;
 	
 	private float cooldownTime;
-	private bool  isCool = true;//default true
+	[SerializeField] private bool  isCool = true;//default true
 	
     public override bool Check()
 	{
