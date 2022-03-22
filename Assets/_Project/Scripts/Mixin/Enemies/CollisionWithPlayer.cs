@@ -24,6 +24,7 @@ public class CollisionWithPlayer : MixinActionable
 		if (col.collider.CompareTag("Player"))
 		{		
 					isCollid = true;		
+					Debug.Log("collide to player");
 					actionableMixin[0].Action();
 		}
 	} 

@@ -32,9 +32,9 @@ public class AnimationStateFinisher : AnimationBase
 	
 	public IEnumerator PlayAndWaitForAnim(string stateName)
 	{
-	
+		Debug.Log("blast animation");
 		animator.speed = 0.5f;
-		animStateIndex.SetData(1);
+		animStateIndex.SetData(2);
 		
 		
 		//Wait until we enter the current state

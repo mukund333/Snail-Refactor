@@ -28,7 +28,7 @@ public class SetAimTarget : EnemyBase
 	
 	public void AimTarget(Vector3 targetPosition){
 		Vector3 aimDir = (targetPosition - transform.position).normalized;
-		turtleSprite.eulerAngles = new Vector3(0, 0, GetAngleFromVectorFloat(aimDir));
+		enemySprite.eulerAngles = new Vector3(0, 0, GetAngleFromVectorFloat(aimDir));
 	}
 	
 	public static float GetAngleFromVectorFloat(Vector3 dir){

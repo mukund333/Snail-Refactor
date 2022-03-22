@@ -6,7 +6,7 @@ public abstract class EnemyBase : MixinBase
 {
 	[SerializeField] protected Rigidbody2D rb2d;
 	[SerializeField] protected Transform target;
-	[SerializeField] protected Transform turtleSprite;
+	[SerializeField] protected Transform enemySprite;
 
 	
 	protected virtual void OnEnable()
@@ -18,7 +18,7 @@ public abstract class EnemyBase : MixinBase
 	
 	protected virtual void Start()
 	{
-		turtleSprite =  gameObject.transform.GetChild(0);
+		enemySprite =  gameObject.transform.GetChild(0);
 	}
 
 
