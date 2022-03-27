@@ -287,6 +287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionableMixin:
   - {fileID: 1047545865202306390}
+  isCollid: 0
 --- !u!114 &1047545865202306387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,7 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6c8b328c3ab5104c96f2289cfa6c464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selfDestructTimer: 60
+  selfDestructTimer: 25
   isSelfDestructing: 1
 --- !u!114 &1047545865202306413
 MonoBehaviour:
@@ -483,6 +484,7 @@ MonoBehaviour:
   isAnimationFinish: 0
   stateData: {fileID: 1047545865202306411}
   animStateIndex: {fileID: 1047545865202306406}
+  animIndex: 1
   animName: TurtleTransformAnimation
 --- !u!114 &1047545865202306391
 MonoBehaviour:

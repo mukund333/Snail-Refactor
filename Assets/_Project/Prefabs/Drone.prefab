@@ -211,16 +211,20 @@ GameObject:
   - component: {fileID: 8661507067806361058}
   - component: {fileID: 8661507067806361063}
   - component: {fileID: 8661507067806361081}
+  - component: {fileID: 8661507067806361082}
+  - component: {fileID: 4401336565716333743}
   - component: {fileID: 8661507067806361059}
   - component: {fileID: 8661507067806361062}
+  - component: {fileID: 8661507067806361085}
+  - component: {fileID: 8661507067806361084}
+  - component: {fileID: 8661507067806361080}
   - component: {fileID: 8661507067806361061}
   - component: {fileID: 8661507067806361060}
-  - component: {fileID: 8661507067806361080}
-  - component: {fileID: 8661507067806361084}
   - component: {fileID: 8661507067806361083}
-  - component: {fileID: 8661507067806361082}
-  - component: {fileID: 8661507067806361085}
   - component: {fileID: 8661507067806361086}
+  - component: {fileID: -2083163357550779482}
+  - component: {fileID: 5052781975423784898}
+  - component: {fileID: 377020562}
   m_Layer: 9
   m_Name: Drone
   m_TagString: Untagged
@@ -311,6 +315,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Label: Anim State Index
   data: 0
+--- !u!114 &8661507067806361082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8661507067806361071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11f32d8b0ecd2964e987662f3dac749b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: Distance
+  data: 5
+--- !u!114 &4401336565716333743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8661507067806361071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297784e5570a88a44b8200117938b0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Turtle Mixins
+  checkMixins:
+  - {fileID: 8661507067806361062}
+  actionsMixins:
+  - {fileID: 8661507067806361062}
+  - {fileID: 8661507067806361085}
 --- !u!114 &8661507067806361059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,6 +378,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionableMixin:
   - {fileID: 8661507067806361084}
+  isCollid: 0
+--- !u!114 &8661507067806361085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8661507067806361071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8057d9e2674a448be482599c9212b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: {fileID: 8661507067806361082}
+  animStateIndex: {fileID: 8661507067806361081}
+  detonateRange: 4
+  isDetonating: 0
+--- !u!114 &8661507067806361084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8661507067806361071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bad983187225dd649a65fb0effd3fd65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  animStateIndex: {fileID: 8661507067806361081}
+  speed: {fileID: 377020562}
+  animIndex: 2
+  callKillMixin: {fileID: 8661507067806361061}
+  animName: DroneBeepBeepAnimation
+--- !u!114 &8661507067806361080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8661507067806361071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320db280a923f40429b91e85e791757b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  animStateIndex: {fileID: 8661507067806361081}
+  previousAnimStateIndex: 0
+  isAnimStateChanged: 1
 --- !u!114 &8661507067806361061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,38 +462,6 @@ MonoBehaviour:
   enemySprite: {fileID: 0}
   coinAmount: {x: 1, y: 1}
   coinID: 0
---- !u!114 &8661507067806361080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8661507067806361071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 320db280a923f40429b91e85e791757b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  animStateIndex: {fileID: 8661507067806361081}
-  previousAnimStateIndex: 0
-  isAnimStateChanged: 1
---- !u!114 &8661507067806361084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8661507067806361071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bad983187225dd649a65fb0effd3fd65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  animStateIndex: {fileID: 8661507067806361081}
-  callKillMixin: {fileID: 8661507067806361061}
-  animName: DroneBeepBeepAnimation
 --- !u!114 &8661507067806361083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,36 +479,6 @@ MonoBehaviour:
   enemySprite: {fileID: 0}
   distance: {fileID: 8661507067806361082}
   isCalcDistance: 1
---- !u!114 &8661507067806361082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8661507067806361071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11f32d8b0ecd2964e987662f3dac749b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Label: Distance
-  data: 5
---- !u!114 &8661507067806361085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8661507067806361071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da8057d9e2674a448be482599c9212b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distance: {fileID: 8661507067806361082}
-  animStateIndex: {fileID: 8661507067806361081}
-  detonateRange: 5
-  isDetonating: 0
 --- !u!114 &8661507067806361086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,6 +494,47 @@ MonoBehaviour:
   firstWheel: {fileID: 8661507068119575914}
   secondWheel: {fileID: 8661507068555797014}
   thirdWheel: {fileID: 8661507069311803116}
+--- !u!114 &-2083163357550779482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8661507067806361071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c8b328c3ab5104c96f2289cfa6c464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selfDestructTimer: 12
+  isSelfDestructing: 1
+--- !u!114 &5052781975423784898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8661507067806361071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 495aff2dd2a456d47b6417c1118da8b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CallDrone: {fileID: 4401336565716333743}
+--- !u!114 &377020562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8661507067806361071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11f32d8b0ecd2964e987662f3dac749b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: speed
+  data: 10
 --- !u!1 &8661507068119575914
 GameObject:
   m_ObjectHideFlags: 0

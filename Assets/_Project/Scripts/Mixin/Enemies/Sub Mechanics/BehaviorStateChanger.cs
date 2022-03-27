@@ -36,14 +36,14 @@ public class BehaviorStateChanger : MixinBase
 		{
 			case State.Moving:
 					callSubMixins[0].CheckAndAction();
-					Debug.Log("Moving state");
+					//Debug.Log("Moving state");
 				break;
 			
 			case State.Busy:
 				break;		
 			
 			case State.Aiming:
-					Debug.Log("aim state");
+					//Debug.Log("aim state");
 					animStateIndex.SetData(2);
 					callSubMixins[1].CheckAndAction();
 				break;
@@ -51,7 +51,7 @@ public class BehaviorStateChanger : MixinBase
 			
 			
 			case State.Charging:
-					Debug.Log("Charging state");
+					//Debug.Log("Charging state");
 					animStateIndex.SetData(3);
 					
 				break;

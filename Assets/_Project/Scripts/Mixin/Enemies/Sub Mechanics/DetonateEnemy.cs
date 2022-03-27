@@ -5,11 +5,14 @@ using UnityEngine;
 public class DetonateEnemy : AnimationBase
 {
 	[SerializeField] private IntData 		animStateIndex;
+	[SerializeField] private FloatData 		speed;
+	[SerializeField] private int	 		animIndex;
 	[SerializeField] private MixinBase      callKillMixin;
 	[SerializeField] private string 		animName;
 	
 	public override void Action()
 	{
+		speed.SetData(0);
 		StartCoroutine(PlayAndWaitForAnim(animName));
 	}
 	
@@ -18,14 +21,16 @@ public class DetonateEnemy : AnimationBase
 	public IEnumerator PlayAndWaitForAnim(string stateName)
 	{
 		animStateIndex.SetData(2);
-		
+		animator.speed = 0.5f;
 		//Wait until we enter the current state
 		while (!animator.GetCurrentAnimatorStateInfo(0).IsName(stateName))
 		{
 			yield return null;
+			
 		}
+				
 		
-		animator.speed = 0.5f;
+		
 
 		float waitTime = animator.GetCurrentAnimatorStateInfo(0).length;
 		

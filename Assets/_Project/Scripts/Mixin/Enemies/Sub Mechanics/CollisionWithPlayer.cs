@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollisionWithPlayer : MixinActionable
 {
-	private bool isCollid;
+	[SerializeField]private bool isCollid;
 	
 	public override bool Check()
 	{

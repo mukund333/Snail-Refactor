@@ -7,6 +7,7 @@ public class AnimationStateFinisher : AnimationBase
 	[SerializeField] private bool 		isAnimationFinish = false;
 	[SerializeField] private StateData  stateData;
 	[SerializeField] private IntData 	animStateIndex;
+	[SerializeField] private int 		animIndex;
 	[SerializeField] private string 	animName;
 	//[SerializeField] private MixinBase 	callAnimationStateChanger;	
 	
@@ -25,6 +26,7 @@ public class AnimationStateFinisher : AnimationBase
 	public override void Action()
 	{
 		isAnimationFinish = false;
+		//Debug.Log("Anim finish action");
 		StartCoroutine(PlayAndWaitForAnim(animName));
 
 	}
@@ -32,15 +34,16 @@ public class AnimationStateFinisher : AnimationBase
 	
 	public IEnumerator PlayAndWaitForAnim(string stateName)
 	{
-		Debug.Log("blast animation");
+		
 		animator.speed = 0.5f;
-		animStateIndex.SetData(2);
+		animStateIndex.SetData(animIndex);
 		
 		
 		//Wait until we enter the current state
 		while (!animator.GetCurrentAnimatorStateInfo(0).IsName(stateName))
 		{
 			yield return null;
+			Debug.Log("PlayAndWaitForAnim");
 		}
 
 		float counter = 0;

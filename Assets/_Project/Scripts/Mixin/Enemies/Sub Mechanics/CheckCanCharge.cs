@@ -33,11 +33,11 @@ public class CheckCanCharge : EnemyBase
 			if(raycastHit2D.collider == null )
 			{
 				canCharge = false;
-				Debug.Log("target null");	
+				//Debug.Log("target null");	
 			}else if(raycastHit2D.collider.gameObject == target.gameObject)
 			{
 				canCharge = true;
-				Debug.Log("Got the player");
+				//Debug.Log("Got the player");
 			}	
 		} 
 	}

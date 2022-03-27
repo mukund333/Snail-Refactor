@@ -249,6 +249,9 @@ GameObject:
   m_Component:
   - component: {fileID: 125395856}
   - component: {fileID: 125395855}
+  - component: {fileID: 125395857}
+  - component: {fileID: 125395858}
+  - component: {fileID: 125395859}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -285,9 +288,25 @@ MonoBehaviour:
     limit: 0
     poolHolder: {fileID: 0}
     poolObjectList: []
-  - Name: Eagle
+  - Name: EagleNew
     id: 0
     prefab: {fileID: 2318590515770905978, guid: 3885996102bc6e74aba318e5084eec8f,
+      type: 3}
+    poolSize: 15
+    limit: 0
+    poolHolder: {fileID: 0}
+    poolObjectList: []
+  - Name: Turtle
+    id: 0
+    prefab: {fileID: 1047545865202306396, guid: ec2eaa867a9e94a4d9bbc136d86ea4a3,
+      type: 3}
+    poolSize: 15
+    limit: 0
+    poolHolder: {fileID: 0}
+    poolObjectList: []
+  - Name: Drone
+    id: 0
+    prefab: {fileID: 8661507067806361071, guid: 22f1f63a0d4af0a4287f73b8e1d117b6,
       type: 3}
     poolSize: 15
     limit: 0
@@ -307,6 +326,185 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &125395857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125395854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cca17ac7632b7f478d86d1af9b34f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &125395858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125395854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c567eff5e374baa4dac911835f430214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - Name: EagleNew
+    spawnStartTime: 5
+    spawnFreqRange: {x: 0.15, y: 2}
+    timeToMaxSpawnFreq: 180
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0.61269414
+        outSlope: 0.61269414
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.3711539
+        value: 0.2274038
+        inSlope: 1.1638746
+        outSlope: 1.1638746
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.601638
+        value: 0.6226968
+        inSlope: 1.3310959
+        outSlope: 1.3310959
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0.9471365
+        outSlope: 0.9471365
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    debug: 0
+    poolId: 0
+  - Name: Turtle
+    spawnStartTime: 10
+    spawnFreqRange: {x: 0.15, y: 2}
+    timeToMaxSpawnFreq: 0
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0.3879328
+        outSlope: 0.3879328
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8283319
+        value: 0.3213371
+        inSlope: 2.1706378
+        outSlope: 2.1706378
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 3.953343
+        outSlope: 3.953343
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    debug: 0
+    poolId: 0
+  - Name: Drone
+    spawnStartTime: 0
+    spawnFreqRange: {x: 0.25, y: 5}
+    timeToMaxSpawnFreq: 222
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1.2880884
+        outSlope: 1.2880884
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.3711539
+        value: 0.47807902
+        inSlope: 0.95777035
+        outSlope: 0.95777035
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.601638
+        value: 0.6226968
+        inSlope: 0.7872944
+        outSlope: 0.7872944
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0.9471365
+        outSlope: 0.9471365
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    debug: 0
+    poolId: 0
+--- !u!114 &125395859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125395854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebae67f4bfab7c9439796d3e8114a870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb2d: {fileID: 0}
+  target: {fileID: 0}
+  enemySprite: {fileID: 0}
+  enemiesData: {fileID: 125395858}
+  timer: 0
+  stopSpawn: 0
+  spawnRadius: 50
 --- !u!1 &177481135
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,6 +1151,7 @@ MonoBehaviour:
   isAnimationFinish: 0
   stateData: {fileID: 455243249}
   animStateIndex: {fileID: 455243255}
+  animIndex: 1
   animName: TurtleTransformAnimation
 --- !u!114 &455243233
 MonoBehaviour:
@@ -1148,6 +1347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionableMixin:
   - {fileID: 455243240}
+  isCollid: 0
 --- !u!114 &455243245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1654,6 +1854,7 @@ MonoBehaviour:
   isAnimationFinish: 0
   stateData: {fileID: 561784256}
   animStateIndex: {fileID: 561784262}
+  animIndex: 1
   animName: TurtleTransformAnimation
 --- !u!114 &561784240
 MonoBehaviour:
@@ -1849,6 +2050,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionableMixin:
   - {fileID: 561784247}
+  isCollid: 0
 --- !u!114 &561784252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2286,7 +2488,7 @@ GameObject:
   m_Component:
   - component: {fileID: 757068805}
   m_Layer: 0
-  m_Name: --------------------- (1)
+  m_Name: '--------------------- '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3223,7 +3425,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1364758764}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: -2.63, z: 0}
+  m_LocalPosition: {x: 3.66, y: 1.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 344928604}
@@ -3263,8 +3465,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 2
-  m_AngularDrag: 5
+  m_LinearDrag: 20
+  m_AngularDrag: 50
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 1
@@ -3801,6 +4003,7 @@ MonoBehaviour:
   isAnimationFinish: 0
   stateData: {fileID: 1738052309}
   animStateIndex: {fileID: 1738052315}
+  animIndex: 1
   animName: TurtleTransformAnimation
 --- !u!114 &1738052293
 MonoBehaviour:
@@ -3996,6 +4199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionableMixin:
   - {fileID: 1738052300}
+  isCollid: 0
 --- !u!114 &1738052305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4508,7 +4712,7 @@ PrefabInstance:
     - target: {fileID: 8661507067806361056, guid: 22f1f63a0d4af0a4287f73b8e1d117b6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.42
+      value: -24.4
       objectReference: {fileID: 0}
     - target: {fileID: 8661507067806361056, guid: 22f1f63a0d4af0a4287f73b8e1d117b6,
         type: 3}
@@ -4559,6 +4763,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Drone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661507067806361071, guid: 22f1f63a0d4af0a4287f73b8e1d117b6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22f1f63a0d4af0a4287f73b8e1d117b6, type: 3}

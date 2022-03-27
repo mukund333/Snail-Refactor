@@ -21,7 +21,7 @@ public class BehaviorState : MixinBase
 	{
 		if(actionMixin.Check())
 		{
-			Debug.Log(actionMixin.Check());
+			//Debug.Log(actionMixin.Check());
 			actionMixin.Action();
 		}
 	}

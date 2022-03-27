@@ -10,27 +10,33 @@ public class DetectPlayer : MixinBase
 	[SerializeField] private float detonateRange;
 	[SerializeField] private bool isDetonating = false;
 	
+	private void OnEnable()
+	{
+		animStateIndex.SetData(0);
+		isDetonating = false;
+	}
 	
 	public override bool Check()
 	{
-			return isDetonating;
+			return !isDetonating;
 	}	
 	
 	public override void Action()
 	{
 		isDetonating = false;
+		
+		Debug.Log(" detect player");
 	}
 	
 	void Update()
 	{
-		
-			if (distance.GetData() <= detonateRange){
-				isDetonating = true;
-				animStateIndex.SetData(1);
-				Debug.Log(" detect player");
-			}else if(animStateIndex.GetData()!=2)
+			if(isDetonating == false)
 			{
-				animStateIndex.SetData(0);
+				if (distance.GetData() <= detonateRange){
+					isDetonating = true;
+					animStateIndex.SetData(1);
+					Debug.Log(" detect player");
+				}
 			}
 		
 	}

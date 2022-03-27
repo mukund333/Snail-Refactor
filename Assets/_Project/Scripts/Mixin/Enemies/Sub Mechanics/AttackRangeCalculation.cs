@@ -27,7 +27,7 @@ public class AttackRangeCalculation : MixinBase
 		{
 			speed.SetData(0f);
 			isAttackRange = true;
-			Debug.Log(isAttackRange);
+			//Debug.Log(isAttackRange);
 		}		
 		
 		
@@ -35,6 +35,7 @@ public class AttackRangeCalculation : MixinBase
 		 {
 			 if(animationStateFinisher.Check())
 			 {
+				 Debug.Log("Attack Range ");
 				animationStateFinisher.Action();	
 			 }
 			 isAttackRange = false;

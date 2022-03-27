@@ -5,7 +5,7 @@ using UnityEngine;
 public class SelfDestruct : MixinBase
 {
 	
-	[SerializeField] private float	  		selfDestructTimer = 60f;
+	[SerializeField] private float	  		selfDestructTimer;
 					 private float   		selfDestructTime;
 	[SerializeField] private bool 			isSelfDestructing = true;
 		

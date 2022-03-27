@@ -36,7 +36,7 @@ public class BehaviorStateChangeChecker : MixinBase
         if(previousStateData != newStateData.GetStateData())
 		{
 			isStateChanged = true;
-			Debug.Log(isStateChanged);
+			//Debug.Log(isStateChanged);
 			previousStateData = newStateData.GetStateData();
 			
 		}
