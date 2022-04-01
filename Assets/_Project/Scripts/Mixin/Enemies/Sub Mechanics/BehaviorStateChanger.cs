@@ -7,6 +7,7 @@ public class BehaviorStateChanger : MixinBase
 	
 	[SerializeField] private StateData  	stateData;
 	[SerializeField] private IntData 		animStateIndex;
+	[SerializeField] private BoolData 		isImmortal;
 	[SerializeField] private bool		 	isChangeInState 		= true;
 	[SerializeField] private MixinBase[]	callSubMixins;
 	
@@ -35,6 +36,7 @@ public class BehaviorStateChanger : MixinBase
 		switch (newState)
 		{
 			case State.Moving:
+					isImmortal.SetData(false);
 					callSubMixins[0].CheckAndAction();
 					//Debug.Log("Moving state");
 				break;
@@ -43,6 +45,7 @@ public class BehaviorStateChanger : MixinBase
 				break;		
 			
 			case State.Aiming:
+					isImmortal.SetData(true);
 					//Debug.Log("aim state");
 					animStateIndex.SetData(2);
 					callSubMixins[1].CheckAndAction();
@@ -51,6 +54,7 @@ public class BehaviorStateChanger : MixinBase
 			
 			
 			case State.Charging:
+					isImmortal.SetData(true);
 					//Debug.Log("Charging state");
 					animStateIndex.SetData(3);
 					

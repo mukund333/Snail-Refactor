@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 318efc62403208c4d9fbd6e7db1a80e2, type: 3}
+  m_Name: ShotGunBullet
+  m_EditorClassIdentifier: 
+  bulletName: ShotGun Bullet
+  bulletSprite: {fileID: -4428220542172718860, guid: 5c4a8d525b0942a4f80de2f0a9b24aa8,
+    type: 3}
+  giveDamage: 10
+  takeDamage: 10
+  health: 10

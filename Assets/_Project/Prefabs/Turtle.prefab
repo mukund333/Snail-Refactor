@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1047545865202306400}
   - component: {fileID: 1047545865202306428}
   - component: {fileID: 1047545865202306429}
+  - component: {fileID: 1047545865202306430}
   - component: {fileID: 1047545865202306411}
   - component: {fileID: 1047545865202306404}
   - component: {fileID: 1047545865202306388}
@@ -41,10 +42,13 @@ GameObject:
   - component: {fileID: 1047545865202306403}
   - component: {fileID: 1047545865202306407}
   - component: {fileID: 1047545865202306431}
-  - component: {fileID: 1047545865202306430}
+  - component: {fileID: 1946614047884089812}
+  - component: {fileID: 62786086}
+  - component: {fileID: 62786087}
+  - component: {fileID: 62786123}
   m_Layer: 9
   m_Name: Turtle
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +113,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &1047545865202306406
 MonoBehaviour:
@@ -194,6 +198,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: Displacement check
+  data: 1
+--- !u!114 &1047545865202306430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047545865202306396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9582b85d13a6bdc4db958cdd28379c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: Aim Check
   data: 1
 --- !u!114 &1047545865202306411
 MonoBehaviour:
@@ -411,6 +429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateData: {fileID: 1047545865202306411}
   animStateIndex: {fileID: 1047545865202306406}
+  isImmortal: {fileID: 62786086}
   isChangeInState: 1
   callSubMixins:
   - {fileID: 1047545865202306408}
@@ -594,7 +613,21 @@ MonoBehaviour:
   stateData: {fileID: 1047545865202306411}
   isAiming: {fileID: 1047545865202306430}
   chargeSpeed: 20
---- !u!114 &1047545865202306430
+--- !u!114 &1946614047884089812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047545865202306396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8c2c570ba30dba42afc301301980155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: Damage Take Amount
+  data: 10
+--- !u!114 &62786086
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -606,8 +639,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9582b85d13a6bdc4db958cdd28379c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Label: Aim Check
-  data: 1
+  Label: check Immortal
+  data: 0
+--- !u!114 &62786087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047545865202306396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2291166f4112216458328a970f8c9190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: {fileID: 1047545865202306414}
+  CallKillEnemy: {fileID: 1047545865202306390}
+  damageAmount: 0
+--- !u!114 &62786123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047545865202306396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab4580d40621ff44cb8aaabafb8add99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isImmortal: {fileID: 62786086}
 --- !u!1 &1047545866373798014
 GameObject:
   m_ObjectHideFlags: 0

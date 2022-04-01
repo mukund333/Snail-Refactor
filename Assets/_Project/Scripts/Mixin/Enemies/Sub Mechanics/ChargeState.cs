@@ -11,6 +11,7 @@ public class ChargeState : EnemyBase
 	[SerializeField] private BoolData  		isAiming;	
 	[SerializeField] private float 			chargeSpeed	 			= 20f;
 	
+	
     void Update()
 	{
 		switch (stateData.GetStateData())
