@@ -225,9 +225,11 @@ GameObject:
   - component: {fileID: -2083163357550779482}
   - component: {fileID: 5052781975423784898}
   - component: {fileID: 377020562}
+  - component: {fileID: 8661507069210624298}
+  - component: {fileID: 8661507069210624299}
   m_Layer: 9
   m_Name: Drone
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -534,6 +536,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: speed
+  data: 10
+--- !u!114 &8661507069210624298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8661507067806361071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2291166f4112216458328a970f8c9190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: {fileID: 0}
+  CallKillEnemy: {fileID: 0}
+  damageAmount: 0
+--- !u!114 &8661507069210624299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8661507067806361071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8c2c570ba30dba42afc301301980155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: Damage Take Amount
   data: 10
 --- !u!1 &8661507068119575914
 GameObject:

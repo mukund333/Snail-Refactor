@@ -252,6 +252,8 @@ GameObject:
   - component: {fileID: 125395857}
   - component: {fileID: 125395858}
   - component: {fileID: 125395859}
+  - component: {fileID: 125395860}
+  - component: {fileID: 125395862}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -505,6 +507,34 @@ MonoBehaviour:
   timer: 0
   stopSpawn: 0
   spawnRadius: 50
+--- !u!114 &125395860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125395854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8c2c570ba30dba42afc301301980155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: Score Data
+  data: 0
+--- !u!114 &125395862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125395854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 985721eba7d6de94d8929c6d5f12bf64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreData: {fileID: 125395860}
+  storeScoreData: {fileID: 11400000, guid: d8f02a82445df0e48ab0a2daaf079416, type: 2}
 --- !u!1 &177481135
 GameObject:
   m_ObjectHideFlags: 0
@@ -2962,6 +2992,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: bullet
       objectReference: {fileID: 0}
+    - target: {fileID: 8832822351823015550, guid: 61fc770654973cc46bf8f924b64edf7e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61fc770654973cc46bf8f924b64edf7e, type: 3}
 --- !u!1 &1161447914
@@ -4695,18 +4730,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDown: 0
   screenWidth: 0
---- !u!114 &2133046713 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 62786086, guid: ec2eaa867a9e94a4d9bbc136d86ea4a3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1047545866196321037}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9582b85d13a6bdc4db958cdd28379c2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1047545866196321037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4714,14 +4737,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 62786086, guid: ec2eaa867a9e94a4d9bbc136d86ea4a3, type: 3}
-      propertyPath: data
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1047545865202306396, guid: ec2eaa867a9e94a4d9bbc136d86ea4a3,
         type: 3}
       propertyPath: m_Name
       value: Turtle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047545865202306396, guid: ec2eaa867a9e94a4d9bbc136d86ea4a3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1047545865202306399, guid: ec2eaa867a9e94a4d9bbc136d86ea4a3,
         type: 3}
@@ -4778,11 +4802,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1047545865202306431, guid: ec2eaa867a9e94a4d9bbc136d86ea4a3,
-        type: 3}
-      propertyPath: isImmortal
-      value: 
-      objectReference: {fileID: 2133046713}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec2eaa867a9e94a4d9bbc136d86ea4a3, type: 3}
 --- !u!114 &1047545866196321038 stripped
@@ -4881,40 +4900,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8661507069210624298, guid: 22f1f63a0d4af0a4287f73b8e1d117b6,
+        type: 3}
+      propertyPath: CallKillEnemy
+      value: 
+      objectReference: {fileID: 1047545866196321038}
+    - target: {fileID: 8661507069210624298, guid: 22f1f63a0d4af0a4287f73b8e1d117b6,
+        type: 3}
+      propertyPath: currentHealth
+      value: 
+      objectReference: {fileID: 1047545866196321039}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22f1f63a0d4af0a4287f73b8e1d117b6, type: 3}
---- !u!1 &8661507069210624297 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8661507067806361071, guid: 22f1f63a0d4af0a4287f73b8e1d117b6,
-    type: 3}
-  m_PrefabInstance: {fileID: 8661507069210624296}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8661507069210624298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8661507069210624297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2291166f4112216458328a970f8c9190, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: {fileID: 1047545866196321039}
-  CallKillEnemy: {fileID: 1047545866196321038}
-  damageAmount: 0
---- !u!114 &8661507069210624299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8661507069210624297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8c2c570ba30dba42afc301301980155, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Label: Damage Take Amount
-  data: 10
